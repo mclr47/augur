@@ -83,6 +83,15 @@
         </dynamic-line-chart>
       </div>
 
+      <div class="col col-6">
+        <dynamic-line-chart source="linesChangedByWeek"
+                    title="Lines Changed / Week"
+                    cite-url=""
+                    cite-text="Lines Changed by Week"
+                    :data="values['lines_changed_by_week']">
+        </dynamic-line-chart>
+      </div>
+
       <div class="col col-12">
         <stacked-bar-chart source="issueActivity"
                     title="Issue Activity"
