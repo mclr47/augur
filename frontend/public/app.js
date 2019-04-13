@@ -1576,6 +1576,142 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
 })()}
 });
 
+;require.register("components/FacadeTest.vue", function(exports, require, module) {
+;(function(){
+"use strict";
+
+module.exports = {
+	methods: {
+		addProject: function addProject() {
+			var name = document.getElementById("add-proj-name").value;
+			var description = document.getElementById("add-proj-description").value;
+			var website = document.getElementById("add-proj-website").value;
+
+			var url = 'http://0.0.0.0:5000/api/unstable/facade/cli_add_project?name=' + name + '&description=' + description + '&website=' + website;
+			console.log(url);
+
+			var method = {
+				method: "POST",
+				mode: 'no-cors'
+			};
+
+			fetch(url, method);
+		},
+		deleteProject: function deleteProject() {
+			var id = document.getElementById("delete-proj-id").value;
+
+			var url = 'http://0.0.0.0:5000/api/unstable/facade/cli_delete_project?project_id=' + id;
+			console.log(url);
+
+			var method = {
+				method: "POST",
+				mode: 'no-cors'
+			};
+
+			fetch(url, method);
+		},
+		addRepo: function addRepo() {
+			var project_id = document.getElementById("add-repo-id").value;
+			var git = document.getElementById("add-repo-git").value;
+
+			var url = 'http://0.0.0.0:5000/api/unstable/facade/cli_add_repo?project_id=' + project_id + '&git_repo=' + git;
+			console.log(url);
+
+			var method = {
+				method: "POST",
+				mode: 'no-cors'
+			};
+
+			fetch(url, method);
+		},
+		deleteRepo: function deleteRepo() {
+			var git_repo = document.getElementById("delete-repo-id").value;
+
+			var url = 'http://0.0.0.0:5000/api/unstable/facade/cli_delete_repo?git_repo=' + git_repo;
+			console.log(url);
+
+			var method = {
+				method: "POST",
+				mode: 'no-cors'
+			};
+
+			fetch(url, method);
+		},
+		addAffiliation: function addAffiliation() {
+			var dom = document.getElementById("add-aff-domain").value;
+			var aff = document.getElementById("add-aff-aff").value;
+			var date = document.getElementById("add-aff-date").value;
+
+			var url = 'http://0.0.0.0:5000/api/unstable/facade/cli_add_affiliation?domain=' + dom + '&affiliation=' + aff + '&start_date=' + date;
+			console.log(url);
+
+			var method = {
+				method: "POST",
+				mode: 'no-cors'
+			};
+
+			fetch(url, method);
+		},
+		deleteAffiliation: function deleteAffiliation() {
+			var affid = document.getElementById("delete-aff-id").value;
+
+			var url = 'http://0.0.0.0:5000/api/unstable/facade/cli_delete_affiliation?affiliation_id=' + affid;
+			console.log(url);
+
+			var method = {
+				method: "POST",
+				mode: 'no-cors'
+			};
+
+			fetch(url, method);
+		},
+		addAlias: function addAlias() {
+			var alias = document.getElementById("add-alias-alias").value;
+			var canonical = document.getElementById("add-alias-canonical").value;
+
+			var url = 'http://0.0.0.0:5000/api/unstable/facade/cli_add_alias?alias=' + alias + '&canonical=' + canonical;
+			console.log(url);
+
+			var method = {
+				method: "POST",
+				mode: 'no-cors'
+			};
+
+			fetch(url, method);
+		},
+		deleteAlias: function deleteAlias() {
+			var aliasid = document.getElementById("delete-alias-id").value;
+
+			var url = 'http://0.0.0.0:5000/api/unstable/facade/cli_delete_alias?alias_id=' + aliasid;
+			console.log(url);
+
+			var method = {
+				method: "POST",
+				mode: 'no-cors'
+			};
+
+			fetch(url, method);
+		}
+	}
+};
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._m(0),_vm._v(" "),_c('div',{staticClass:"row"},[_vm._m(1),_vm._v(" "),_vm._m(2),_vm._v(" "),_vm._m(3),_vm._v(" "),_c('div',{staticClass:"col col-3"},[_c('input',{attrs:{"type":"button","value":"Add Project"},on:{"click":_vm.addProject}})])]),_vm._v(" "),_vm._m(4),_vm._v(" "),_c('div',{staticClass:"row"},[_vm._m(5),_vm._v(" "),_c('div',{staticClass:"col col-3"},[_c('input',{attrs:{"type":"button","value":"Delete Project"},on:{"click":_vm.deleteProject}})])]),_vm._v(" "),_vm._m(6),_vm._v(" "),_c('div',{staticClass:"row"},[_vm._m(7),_vm._v(" "),_vm._m(8),_vm._v(" "),_c('div',{staticClass:"col col-3"},[_c('input',{attrs:{"type":"button","value":"Add Repo"},on:{"click":_vm.addRepo}})])]),_vm._v(" "),_vm._m(9),_vm._v(" "),_c('div',{staticClass:"row"},[_vm._m(10),_vm._v(" "),_c('div',{staticClass:"col col-3"},[_c('input',{attrs:{"type":"button","value":"Delete Repo"},on:{"click":_vm.deleteRepo}})])]),_vm._v(" "),_vm._m(11),_vm._v(" "),_c('div',{staticClass:"row"},[_vm._m(12),_vm._v(" "),_vm._m(13),_vm._v(" "),_vm._m(14),_vm._v(" "),_c('div',{staticClass:"col col-3"},[_c('input',{attrs:{"type":"button","value":"Add Affiliation"},on:{"click":_vm.addAffiliation}})])]),_vm._v(" "),_vm._m(15),_vm._v(" "),_c('div',{staticClass:"row"},[_vm._m(16),_vm._v(" "),_c('div',{staticClass:"col col-3"},[_c('input',{attrs:{"type":"button","value":"Delete Affiliation"},on:{"click":_vm.deleteAffiliation}})])]),_vm._v(" "),_vm._m(17),_vm._v(" "),_c('div',{staticClass:"row"},[_vm._m(18),_vm._v(" "),_vm._m(19),_vm._v(" "),_c('div',{staticClass:"col col-3"},[_c('input',{attrs:{"type":"button","value":"Add Alias"},on:{"click":_vm.addAlias}})])]),_vm._v(" "),_vm._m(20),_vm._v(" "),_c('div',{staticClass:"row"},[_vm._m(21),_vm._v(" "),_c('div',{staticClass:"col col-3"},[_c('input',{attrs:{"type":"button","value":"Delete Alias"},on:{"click":_vm.deleteAlias}})])])])}
+__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:" col "},[_c('h3',[_vm._v("Add Project:")])])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"col col-2"},[_c('input',{attrs:{"type":"text","placeholder":"Name","id":"add-proj-name"}})])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"col col-2"},[_c('input',{attrs:{"type":"text","placeholder":"Description","id":"add-proj-description"}})])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"col col-2"},[_c('input',{attrs:{"type":"text","placeholder":"Website","id":"add-proj-website"}})])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:" col "},[_c('h3',[_vm._v("Delete Project:")])])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"col col-2"},[_c('input',{attrs:{"type":"text","placeholder":"Project ID","id":"delete-proj-id"}})])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:" col "},[_c('h3',[_vm._v("Add Repo:")])])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"col col-2"},[_c('input',{attrs:{"type":"text","placeholder":"Project's ID","id":"add-repo-id"}})])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"col col-2"},[_c('input',{attrs:{"type":"text","placeholder":"Git","id":"add-repo-git"}})])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:" col "},[_c('h3',[_vm._v("Delete Repo:")])])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"col col-2"},[_c('input',{attrs:{"type":"text","placeholder":"Repo ID","id":"delete-repo-id"}})])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:" col "},[_c('h3',[_vm._v("Add Affiliation:")])])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"col col-2"},[_c('input',{attrs:{"type":"text","placeholder":"Domain","id":"add-aff-domain"}})])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"col col-2"},[_c('input',{attrs:{"type":"text","placeholder":"Affiliation","id":"add-aff-aff"}})])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"col col-2"},[_c('input',{attrs:{"type":"text","placeholder":"Start Date","id":"add-aff-date"}})])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:" col "},[_c('h3',[_vm._v("Delete Affiliation:")])])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"col col-2"},[_c('input',{attrs:{"type":"text","placeholder":"Affiliation ID","id":"delete-aff-id"}})])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:" col "},[_c('h3',[_vm._v("Add Alias:")])])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"col col-2"},[_c('input',{attrs:{"type":"text","placeholder":"Alias","id":"add-alias-alias"}})])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"col col-2"},[_c('input',{attrs:{"type":"text","placeholder":"Canonical","id":"add-alias-canonical"}})])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:" col "},[_c('h3',[_vm._v("Delete Alias:")])])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"col col-2"},[_c('input',{attrs:{"type":"text","placeholder":"Alias ID","id":"delete-alias-id"}})])}]
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-42975a79", __vue__options__)
+  } else {
+    hotAPI.reload("data-v-42975a79", __vue__options__)
+  }
+})()}
+});
+
 ;require.register("components/GitCard.vue", function(exports, require, module) {
 ;(function(){
 'use strict';
@@ -1706,9 +1842,15 @@ var _DynamicLineChart = require('./charts/DynamicLineChart');
 
 var _DynamicLineChart2 = _interopRequireDefault(_DynamicLineChart);
 
+<<<<<<< Updated upstream
 var _SkeletonChart = require('./charts/SkeletonChart');
 
 var _SkeletonChart2 = _interopRequireDefault(_SkeletonChart);
+=======
+var _FacadeTest = require('./FacadeTest');
+
+var _FacadeTest2 = _interopRequireDefault(_FacadeTest);
+>>>>>>> Stashed changes
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1717,7 +1859,11 @@ module.exports = {
     BubbleChart: _BubbleChart2.default,
     StackedBarChart: _StackedBarChart2.default,
     DynamicLineChart: _DynamicLineChart2.default,
+<<<<<<< Updated upstream
     SkeletonChart: _SkeletonChart2.default
+=======
+    FacadeTest: _FacadeTest2.default
+>>>>>>> Stashed changes
   },
   data: function data() {
     return {
@@ -1862,7 +2008,11 @@ module.exports = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+<<<<<<< Updated upstream
 __vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',[_c('div',{staticStyle:{"display":"inline-block"}},[_c('h2',{staticStyle:{"display":"inline-block","color":"black !important"}},[_vm._v(_vm._s(_vm.$store.state.baseRepo))]),_vm._v(" "),(_vm.$store.state.comparedRepos.length > 0)?_c('h2',{staticClass:"repolisting",staticStyle:{"display":"inline-block"}},[_vm._v(" compared to: ")]):_vm._e(),_vm._v(" "),_vm._l((_vm.$store.state.comparedRepos),function(repo,index){return _c('h2',{staticStyle:{"display":"inline-block"}},[_c('span',{staticClass:"repolisting",style:({ 'color': _vm.colors[index] }),attrs:{"value":repo},on:{"click":function($event){}}},[_vm._v(" "+_vm._s(repo)+" ")])])})],2),_vm._v(" "),(_vm.loaded1)?_c('div',{staticClass:"row"},[_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"codeReviewIteration","title":"Number of Code Review Iterations","size":"total","cite-url":"https://github.com/chaoss/metrics/blob/master/activity-metrics/code-review-iteration.md","cite-text":"Code Review Iterations","data":_vm.values['codeReviewIteration']}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"closedIssues","title":"Closed Issues / Week","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/closed-issues.md","cite-text":"Issues Closed","data":_vm.values['closedIssues']}})],1)]):_vm._e(),_vm._v(" "),(_vm.loaded2)?_c('div',{staticClass:"row"},[_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"contributionAcceptance","title":"Contribution Acceptance","size":"total","cite-url":"https://github.com/chaoss/metrics/blob/master/activity-metrics/contribution-acceptance.md","cite-text":"Contribution Acceptance","data":_vm.values['contributionAcceptance']}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"forks","title":"Forks / Week","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/forks.md","cite-text":"Forks","data":_vm.values['forks']}})],1)]):_vm._e(),_vm._v(" "),(_vm.loaded3)?_c('div',{staticClass:"row"},[_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"maintainerResponseToMergeRequestDuration","title":"Time to First Maintainer Response to Merge Request","size":"total","cite-url":"https://github.com/chaoss/metrics/blob/master/activity-metrics/maintainer-response-to-merge-request-duration.md","cite-text":"Time to First Maintainer Response to Merge Request","data":_vm.values['maintainerResponseToMergeRequestDuration']}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"codeCommits","title":"Code Commits / Week","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/commits.md","cite-text":"Commits","data":_vm.values['codeCommits']}})],1)]):_vm._e(),_vm._v(" "),(_vm.loaded4)?_c('div',{staticClass:"row"},[_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"newContributingGithubOrganizations","title":"New Contributing Github Organizations","size":"total","cite-url":"https://github.com/chaoss/metrics/blob/master/activity-metrics/new-contributing-organizations.md","cite-text":"New Contributing Organizations","data":_vm.values['newContributingGithubOrganizations']}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"openIssues","title":"Open Issues / Week","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/open-issues.md","cite-text":"Issues Open","data":_vm.values['openIssues']}})],1)]):_vm._e(),_vm._v(" "),(_vm.loaded5)?_c('div',{staticClass:"row"},[_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"pullRequestComments","title":"Pull Request Comments / Week ","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/pull-request-comments.md","cite-text":"Pull Request Comments","data":_vm.values['pullRequestComments']}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"pullRequestsOpen","title":"Pull Requests Open / Week","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/pull-requests-open.md","cite-text":"Open Pull Requests","data":_vm.values['pullRequestsOpen']}})],1),_vm._v(" "),_c('div',{staticClass:"col col-12"},[_c('bubble-chart',{attrs:{"source":"contributingGithubOrganizations","title":"Contributing Github Organizations Overview","size":"total","cite-url":"https://github.com/chaoss/metrics/blob/master/activity-metrics/contributing-organizations.md","cite-text":"Contributing Organizations","data":_vm.values['contributingGithubOrganizations']}})],1)]):_vm._e(),_vm._v(" "),(_vm.loaded == null)?_c('div',{staticClass:"col col-12 spinner loader",staticStyle:{"text-align":"center","margin-left":"44.4%","position":"relative !important"}}):_vm._e(),_vm._v(" "),_vm._m(0)])}
+=======
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',[_c('facade-test'),_vm._v(" "),_c('div',{staticStyle:{"display":"inline-block"}},[_c('h2',{staticStyle:{"display":"inline-block","color":"black !important"}},[_vm._v(_vm._s(_vm.$store.state.baseRepo))]),_vm._v(" "),(_vm.$store.state.comparedRepos.length > 0)?_c('h2',{staticClass:"repolisting",staticStyle:{"display":"inline-block"}},[_vm._v(" compared to: ")]):_vm._e(),_vm._v(" "),_vm._l((_vm.$store.state.comparedRepos),function(repo,index){return _c('h2',{staticStyle:{"display":"inline-block"}},[_c('span',{staticClass:"repolisting",style:({ 'color': _vm.colors[index] }),attrs:{"value":repo},on:{"click":function($event){}}},[_vm._v(" "+_vm._s(repo)+" ")])])})],2),_vm._v(" "),_c('div',{staticClass:"row"},[_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"closedIssues","title":"Closed Issues / Week","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/closed-issues.md","cite-text":"Issues Closed"}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"codeCommits","title":"Code Commits / Week","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/commits.md","cite-text":"Commits"}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"codeReviewIteration","title":"Number of Code Review Iterations","size":"total","cite-url":"https://github.com/chaoss/metrics/blob/master/activity-metrics/code-review-iteration.md","cite-text":"Code Review Iterations"}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"contributionAcceptance","title":"Contribution Acceptance","size":"total","cite-url":"https://github.com/chaoss/metrics/blob/master/activity-metrics/contribution-acceptance.md","cite-text":"Contribution Acceptance"}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"forks","title":"Forks / Week","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/forks.md","cite-text":"Forks"}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"maintainerResponseToMergeRequestDuration","title":"Time to First Maintainer Response to Merge Request","size":"total","cite-url":"https://github.com/chaoss/metrics/blob/master/activity-metrics/maintainer-response-to-merge-request-duration.md","cite-text":"Time to First Maintainer Response to Merge Request"}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"newContributingGithubOrganizations","title":"New Contributing Github Organizations","size":"total","cite-url":"https://github.com/chaoss/metrics/blob/master/activity-metrics/new-contributing-organizations.md","cite-text":"New Contributing Organizations"}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"openIssues","title":"Open Issues / Week","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/open-issues.md","cite-text":"Issues Open"}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"pullRequestComments","title":"Pull Request Comments / Week ","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/pull-request-comments.md","cite-text":"Pull Request Comments"}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"pullRequestsOpen","title":"Pull Requests Open / Week","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/pull-requests-open.md","cite-text":"Open Pull Requests"}})],1),_vm._v(" "),_c('div',{staticClass:"col col-12"},[_c('bubble-chart',{attrs:{"source":"contributingGithubOrganizations","title":"Contributing Github Organizations Overview","size":"total","cite-url":"https://github.com/chaoss/metrics/blob/master/activity-metrics/contributing-organizations.md","cite-text":"Contributing Organizations"}})],1)]),_vm._v(" "),_vm._m(0)],1)}
+>>>>>>> Stashed changes
 __vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('small',[_vm._v("Data provided by "),_c('a',{attrs:{"href":"http://ghtorrent.org/msr14.html"}},[_vm._v("GHTorrent")]),_vm._v(" "),_c('span',{staticClass:"ghtorrent-version"}),_vm._v(" and the "),_c('a',{attrs:{"href":"https://developer.github.com/"}},[_vm._v("GitHub API")])])}]
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -2116,6 +2266,7 @@ module.exports = {
         _this5.repos = window._.groupBy(data, 'project_name');
         _this5.projects = Object.keys(_this5.repos);
       });
+      console.log(server.format);
     },
     keepSelecting: function keepSelecting() {
       $(this.$el).find('.multiselect__content-wrapper').addClass('selecting');

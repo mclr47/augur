@@ -1,6 +1,7 @@
 <template>
   <section>
     <!-- <h1>Growth, Maturity, and Decline</h1> -->
+    <!-- <facade-test></facade-test> -->
     <div style="display: inline-block;">
       <h2 style="display: inline-block; color: black !important">{{ $store.state.baseRepo }}</h2>
       <h2 style="display: inline-block;" class="repolisting" v-if="$store.state.comparedRepos.length > 0"> compared to: </h2>
@@ -150,13 +151,13 @@
 import BubbleChart from './charts/BubbleChart'
 import StackedBarChart from './charts/StackedBarChart'
 import DynamicLineChart from './charts/DynamicLineChart'
-import SkeletonChart from './charts/SkeletonChart'
+import FacadeTest from './FacadeTest'
 module.exports = {
   components: {
     BubbleChart,
     StackedBarChart,
     DynamicLineChart,
-    SkeletonChart
+    FacadeTest
   },
   data() {
     return {
