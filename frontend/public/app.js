@@ -1842,15 +1842,13 @@ var _DynamicLineChart = require('./charts/DynamicLineChart');
 
 var _DynamicLineChart2 = _interopRequireDefault(_DynamicLineChart);
 
-<<<<<<< Updated upstream
 var _SkeletonChart = require('./charts/SkeletonChart');
 
 var _SkeletonChart2 = _interopRequireDefault(_SkeletonChart);
-=======
+
 var _FacadeTest = require('./FacadeTest');
 
 var _FacadeTest2 = _interopRequireDefault(_FacadeTest);
->>>>>>> Stashed changes
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1859,11 +1857,8 @@ module.exports = {
     BubbleChart: _BubbleChart2.default,
     StackedBarChart: _StackedBarChart2.default,
     DynamicLineChart: _DynamicLineChart2.default,
-<<<<<<< Updated upstream
+    FacadeTest: _FacadeTest2.default,
     SkeletonChart: _SkeletonChart2.default
-=======
-    FacadeTest: _FacadeTest2.default
->>>>>>> Stashed changes
   },
   data: function data() {
     return {
@@ -2008,11 +2003,7 @@ module.exports = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-<<<<<<< Updated upstream
 __vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',[_c('div',{staticStyle:{"display":"inline-block"}},[_c('h2',{staticStyle:{"display":"inline-block","color":"black !important"}},[_vm._v(_vm._s(_vm.$store.state.baseRepo))]),_vm._v(" "),(_vm.$store.state.comparedRepos.length > 0)?_c('h2',{staticClass:"repolisting",staticStyle:{"display":"inline-block"}},[_vm._v(" compared to: ")]):_vm._e(),_vm._v(" "),_vm._l((_vm.$store.state.comparedRepos),function(repo,index){return _c('h2',{staticStyle:{"display":"inline-block"}},[_c('span',{staticClass:"repolisting",style:({ 'color': _vm.colors[index] }),attrs:{"value":repo},on:{"click":function($event){}}},[_vm._v(" "+_vm._s(repo)+" ")])])})],2),_vm._v(" "),(_vm.loaded1)?_c('div',{staticClass:"row"},[_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"codeReviewIteration","title":"Number of Code Review Iterations","size":"total","cite-url":"https://github.com/chaoss/metrics/blob/master/activity-metrics/code-review-iteration.md","cite-text":"Code Review Iterations","data":_vm.values['codeReviewIteration']}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"closedIssues","title":"Closed Issues / Week","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/closed-issues.md","cite-text":"Issues Closed","data":_vm.values['closedIssues']}})],1)]):_vm._e(),_vm._v(" "),(_vm.loaded2)?_c('div',{staticClass:"row"},[_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"contributionAcceptance","title":"Contribution Acceptance","size":"total","cite-url":"https://github.com/chaoss/metrics/blob/master/activity-metrics/contribution-acceptance.md","cite-text":"Contribution Acceptance","data":_vm.values['contributionAcceptance']}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"forks","title":"Forks / Week","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/forks.md","cite-text":"Forks","data":_vm.values['forks']}})],1)]):_vm._e(),_vm._v(" "),(_vm.loaded3)?_c('div',{staticClass:"row"},[_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"maintainerResponseToMergeRequestDuration","title":"Time to First Maintainer Response to Merge Request","size":"total","cite-url":"https://github.com/chaoss/metrics/blob/master/activity-metrics/maintainer-response-to-merge-request-duration.md","cite-text":"Time to First Maintainer Response to Merge Request","data":_vm.values['maintainerResponseToMergeRequestDuration']}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"codeCommits","title":"Code Commits / Week","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/commits.md","cite-text":"Commits","data":_vm.values['codeCommits']}})],1)]):_vm._e(),_vm._v(" "),(_vm.loaded4)?_c('div',{staticClass:"row"},[_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"newContributingGithubOrganizations","title":"New Contributing Github Organizations","size":"total","cite-url":"https://github.com/chaoss/metrics/blob/master/activity-metrics/new-contributing-organizations.md","cite-text":"New Contributing Organizations","data":_vm.values['newContributingGithubOrganizations']}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"openIssues","title":"Open Issues / Week","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/open-issues.md","cite-text":"Issues Open","data":_vm.values['openIssues']}})],1)]):_vm._e(),_vm._v(" "),(_vm.loaded5)?_c('div',{staticClass:"row"},[_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"pullRequestComments","title":"Pull Request Comments / Week ","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/pull-request-comments.md","cite-text":"Pull Request Comments","data":_vm.values['pullRequestComments']}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"pullRequestsOpen","title":"Pull Requests Open / Week","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/pull-requests-open.md","cite-text":"Open Pull Requests","data":_vm.values['pullRequestsOpen']}})],1),_vm._v(" "),_c('div',{staticClass:"col col-12"},[_c('bubble-chart',{attrs:{"source":"contributingGithubOrganizations","title":"Contributing Github Organizations Overview","size":"total","cite-url":"https://github.com/chaoss/metrics/blob/master/activity-metrics/contributing-organizations.md","cite-text":"Contributing Organizations","data":_vm.values['contributingGithubOrganizations']}})],1)]):_vm._e(),_vm._v(" "),(_vm.loaded == null)?_c('div',{staticClass:"col col-12 spinner loader",staticStyle:{"text-align":"center","margin-left":"44.4%","position":"relative !important"}}):_vm._e(),_vm._v(" "),_vm._m(0)])}
-=======
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',[_c('facade-test'),_vm._v(" "),_c('div',{staticStyle:{"display":"inline-block"}},[_c('h2',{staticStyle:{"display":"inline-block","color":"black !important"}},[_vm._v(_vm._s(_vm.$store.state.baseRepo))]),_vm._v(" "),(_vm.$store.state.comparedRepos.length > 0)?_c('h2',{staticClass:"repolisting",staticStyle:{"display":"inline-block"}},[_vm._v(" compared to: ")]):_vm._e(),_vm._v(" "),_vm._l((_vm.$store.state.comparedRepos),function(repo,index){return _c('h2',{staticStyle:{"display":"inline-block"}},[_c('span',{staticClass:"repolisting",style:({ 'color': _vm.colors[index] }),attrs:{"value":repo},on:{"click":function($event){}}},[_vm._v(" "+_vm._s(repo)+" ")])])})],2),_vm._v(" "),_c('div',{staticClass:"row"},[_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"closedIssues","title":"Closed Issues / Week","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/closed-issues.md","cite-text":"Issues Closed"}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"codeCommits","title":"Code Commits / Week","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/commits.md","cite-text":"Commits"}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"codeReviewIteration","title":"Number of Code Review Iterations","size":"total","cite-url":"https://github.com/chaoss/metrics/blob/master/activity-metrics/code-review-iteration.md","cite-text":"Code Review Iterations"}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"contributionAcceptance","title":"Contribution Acceptance","size":"total","cite-url":"https://github.com/chaoss/metrics/blob/master/activity-metrics/contribution-acceptance.md","cite-text":"Contribution Acceptance"}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"forks","title":"Forks / Week","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/forks.md","cite-text":"Forks"}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"maintainerResponseToMergeRequestDuration","title":"Time to First Maintainer Response to Merge Request","size":"total","cite-url":"https://github.com/chaoss/metrics/blob/master/activity-metrics/maintainer-response-to-merge-request-duration.md","cite-text":"Time to First Maintainer Response to Merge Request"}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"newContributingGithubOrganizations","title":"New Contributing Github Organizations","size":"total","cite-url":"https://github.com/chaoss/metrics/blob/master/activity-metrics/new-contributing-organizations.md","cite-text":"New Contributing Organizations"}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"openIssues","title":"Open Issues / Week","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/open-issues.md","cite-text":"Issues Open"}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"pullRequestComments","title":"Pull Request Comments / Week ","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/pull-request-comments.md","cite-text":"Pull Request Comments"}})],1),_vm._v(" "),_c('div',{staticClass:"col col-6"},[_c('dynamic-line-chart',{attrs:{"source":"pullRequestsOpen","title":"Pull Requests Open / Week","cite-url":"https://github.com/augurlabs/wg-gmd/blob/master/activity-metrics/pull-requests-open.md","cite-text":"Open Pull Requests"}})],1),_vm._v(" "),_c('div',{staticClass:"col col-12"},[_c('bubble-chart',{attrs:{"source":"contributingGithubOrganizations","title":"Contributing Github Organizations Overview","size":"total","cite-url":"https://github.com/chaoss/metrics/blob/master/activity-metrics/contributing-organizations.md","cite-text":"Contributing Organizations"}})],1)]),_vm._v(" "),_vm._m(0)],1)}
->>>>>>> Stashed changes
 __vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('small',[_vm._v("Data provided by "),_c('a',{attrs:{"href":"http://ghtorrent.org/msr14.html"}},[_vm._v("GHTorrent")]),_vm._v(" "),_c('span',{staticClass:"ghtorrent-version"}),_vm._v(" and the "),_c('a',{attrs:{"href":"https://developer.github.com/"}},[_vm._v("GitHub API")])])}]
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -2978,7 +2969,7 @@ module.exports = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('nav',{staticClass:"tabs"},[_c('ul',[_c('li',{class:{ active: (_vm.currentTab == 'gmd') }},[_c('a',{attrs:{"href":"#","data-value":"gmd"},on:{"click":_vm.changeTab}},[_vm._v("Growth, Maturity, and Decline")])]),_vm._v(" "),_c('li',{class:{ active: (_vm.currentTab == 'diversityinclusion') }},[_c('a',{attrs:{"href":"#","data-value":"diversityinclusion"},on:{"click":_vm.changeTab}},[_vm._v("Diversity and Inclusion")])]),_vm._v(" "),_c('li',{class:{ active: (_vm.currentTab == 'risk') }},[_c('a',{attrs:{"href":"#","data-value":"risk"},on:{"click":_vm.changeTab}},[_vm._v("Risk")])]),_vm._v(" "),_c('li',{class:{ active: (_vm.currentTab == 'value') }},[_c('a',{attrs:{"href":"#","data-value":"value"},on:{"click":_vm.changeTab}},[_vm._v("Value")])]),_vm._v(" "),_c('li',{class:{ active: (_vm.currentTab == 'activity') }},[_c('a',{attrs:{"href":"#","data-value":"activity"},on:{"click":_vm.changeTab}},[_vm._v("Activity")])]),_vm._v(" "),_c('li',{class:{ active: (_vm.currentTab == 'experimental') }},[_c('a',{attrs:{"href":"#","data-value":"experimental"},on:{"click":_vm.changeTab}},[_vm._v("Experimental")])]),_vm._v(" "),_c('li',{class:{ active: (_vm.currentTab == 'git'), hidden: !_vm.gitRepo }},[_c('a',{attrs:{"href":"#","data-value":"git"},on:{"click":_vm.changeTab}},[_vm._v("Git")])]),_vm._v(" "),_c('li',{class:{ active: (_vm.currentTab == 'overview'), hidden: !_vm.gitRepo }},[_c('a',{attrs:{"href":"#","data-value":"overview"},on:{"click":_vm.changeTab}},[_vm._v("Overview")])])])])}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('nav',{staticClass:"tabs"},[_c('ul',[_c('li',{class:{ active: (_vm.currentTab == 'gmd') }},[_c('a',{attrs:{"href":"#","data-value":"gmd"},on:{"click":_vm.changeTab}},[_vm._v("Growth, Maturity, and Decline")])]),_vm._v(" "),_c('li',{class:{ active: (_vm.currentTab == 'diversityinclusion') }},[_c('a',{attrs:{"href":"#","data-value":"diversityinclusion"},on:{"click":_vm.changeTab}},[_vm._v("Diversity and Inclusion")])]),_vm._v(" "),_c('li',{class:{ active: (_vm.currentTab == 'risk') }},[_c('a',{attrs:{"href":"#","data-value":"risk"},on:{"click":_vm.changeTab}},[_vm._v("Risk")])]),_vm._v(" "),_c('li',{class:{ active: (_vm.currentTab == 'value') }},[_c('a',{attrs:{"href":"#","data-value":"value"},on:{"click":_vm.changeTab}},[_vm._v("Value")])]),_vm._v(" "),_c('li',{class:{ active: (_vm.currentTab == 'activity') }},[_c('a',{attrs:{"href":"#","data-value":"activity"},on:{"click":_vm.changeTab}},[_vm._v("Activity")])]),_vm._v(" "),_c('li',{class:{ active: (_vm.currentTab == 'experimental') }},[_c('a',{attrs:{"href":"#","data-value":"experimental"},on:{"click":_vm.changeTab}},[_vm._v("Experimental")])]),_c('li',{class:{ active: (_vm.currentTab == 'test') }},[_c('a',{attrs:{"href":"#","data-value":"test"},on:{"click":_vm.changeTab}},[_vm._v("Test")])]),_vm._v(" "),_c('li',{class:{ active: (_vm.currentTab == 'git'), hidden: !_vm.gitRepo }},[_c('a',{attrs:{"href":"#","data-value":"git"},on:{"click":_vm.changeTab}},[_vm._v("Git")])]),_vm._v(" "),_c('li',{class:{ active: (_vm.currentTab == 'overview'), hidden: !_vm.gitRepo }},[_c('a',{attrs:{"href":"#","data-value":"overview"},on:{"click":_vm.changeTab}},[_vm._v("Overview")])])])])}
 __vue__options__.staticRenderFns = []
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -9846,7 +9837,350 @@ exports['default'] = SvgSaver;
 module.exports = exports['default'];
 });
 
-require.alias("buffer/index.js", "buffer");
+require.register("router/router.js", function(exports, require, module) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _vue = require('vue');
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _vueRouter = require('vue-router');
+
+var _vueRouter2 = _interopRequireDefault(_vueRouter);
+
+var _MetricsStatusCard = require('../components/MetricsStatusCard.vue');
+
+var _MetricsStatusCard2 = _interopRequireDefault(_MetricsStatusCard);
+
+var _BaseRepoActivityCard = require('../components/BaseRepoActivityCard.vue');
+
+var _BaseRepoActivityCard2 = _interopRequireDefault(_BaseRepoActivityCard);
+
+var _BaseRepoEcosystemCard = require('../components/BaseRepoEcosystemCard.vue');
+
+var _BaseRepoEcosystemCard2 = _interopRequireDefault(_BaseRepoEcosystemCard);
+
+var _GrowthMaturityDeclineCard = require('../components/GrowthMaturityDeclineCard');
+
+var _GrowthMaturityDeclineCard2 = _interopRequireDefault(_GrowthMaturityDeclineCard);
+
+var _RiskCard = require('../components/RiskCard');
+
+var _RiskCard2 = _interopRequireDefault(_RiskCard);
+
+var _ValueCard = require('../components/ValueCard');
+
+var _ValueCard2 = _interopRequireDefault(_ValueCard);
+
+var _DiversityInclusionCard = require('../components/DiversityInclusionCard');
+
+var _DiversityInclusionCard2 = _interopRequireDefault(_DiversityInclusionCard);
+
+var _GitCard = require('../components/GitCard');
+
+var _GitCard2 = _interopRequireDefault(_GitCard);
+
+var _OverviewCard = require('../components/OverviewCard.vue');
+
+var _OverviewCard2 = _interopRequireDefault(_OverviewCard);
+
+var _ExperimentalCard = require('../components/ExperimentalCard');
+
+var _ExperimentalCard2 = _interopRequireDefault(_ExperimentalCard);
+
+var _DownloadedReposCard = require('../components/DownloadedReposCard.vue');
+
+var _DownloadedReposCard2 = _interopRequireDefault(_DownloadedReposCard);
+
+var _LoginForm = require('../components/LoginForm');
+
+var _LoginForm2 = _interopRequireDefault(_LoginForm);
+
+var _AugurCards = require('../components/AugurCards.vue');
+
+var _AugurCards2 = _interopRequireDefault(_AugurCards);
+
+var _MainControls = require('../components/MainControls.vue');
+
+var _MainControls2 = _interopRequireDefault(_MainControls);
+
+var _AugurHeader = require('../components/AugurHeader.vue');
+
+var _AugurHeader2 = _interopRequireDefault(_AugurHeader);
+
+var _Tabs = require('../components/Tabs.vue');
+
+var _Tabs2 = _interopRequireDefault(_Tabs);
+
+var _TableView = require('../components/TableView.vue');
+
+var _TableView2 = _interopRequireDefault(_TableView);
+
+var _ProjectDropdown = require('../components/ProjectDropdown.vue');
+
+var _ProjectDropdown2 = _interopRequireDefault(_ProjectDropdown);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var routes = [{ path: '/', component: _AugurCards2.default,
+  children: [{
+    path: "",
+    name: "reposcard",
+    components: {
+      header: _AugurHeader2.default,
+      // tabs: ProjectDropdown,
+      content: _DownloadedReposCard2.default
+      // controls: OverviewCard
+    }
+  }]
+}, { path: '/login', component: _LoginForm2.default }, { path: '/metrics_status',
+  component: _MetricsStatusCard2.default
+}, { path: '/single/:owner?/:repo', name: 'single', props: true, canReuse: false, component: _AugurCards2.default,
+  children: [{
+    path: "gmd",
+    name: "gmd",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _GrowthMaturityDeclineCard2.default
+    }
+  }, {
+    path: "diversityinclusion",
+    name: "diversityinclusion",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _DiversityInclusionCard2.default
+    }
+  }, {
+    path: "risk",
+    name: "risk",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _RiskCard2.default
+    }
+  }, {
+    path: "activity",
+    name: "activity",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _BaseRepoActivityCard2.default
+    }
+  }, {
+    path: "value",
+    name: "value",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _ValueCard2.default
+    }
+  }, {
+    path: "experimental",
+    name: "experimental",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _ExperimentalCard2.default
+    }
+  }, {
+    path: "git",
+    name: "git",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _GitCard2.default
+    }
+  }, {
+    path: "overview",
+    name: "overview",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _OverviewCard2.default
+    }
+  }]
+},
+// {path: '/:tab/:domain/:owner/:repo/comparedto/:comparedowner/:comparedrepo', component: AugurCards, name: 'gitsinglecompare'},
+{ path: '/compare/:owner?/:repo/comparedto/:comparedowner/:comparedrepo', component: _AugurCards2.default, name: 'singlecompare', props: true, canReuse: false,
+  children: [{
+    path: "gmd",
+    name: "gmdcompare",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _GrowthMaturityDeclineCard2.default
+    }
+  }, {
+    path: "diversityinclusion",
+    name: "diversityinclusioncompare",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _DiversityInclusionCard2.default
+    }
+  }, {
+    path: "risk",
+    name: "riskcompare",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _RiskCard2.default
+    }
+  }, {
+    path: "value",
+    name: "valuecompare",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _ValueCard2.default
+    }
+  }, {
+    path: "activity",
+    name: "activitycompare",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _BaseRepoActivityCard2.default
+    }
+  }, {
+    path: "experimental",
+    name: "experimentalcompare",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _ExperimentalCard2.default
+    }
+  }, {
+    path: "git",
+    name: "gitcompare",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _GitCard2.default
+    }
+  }]
+}, { path: '/groupcompare/:groupid', component: _AugurCards2.default, name: 'group', props: true, canReuse: false,
+  children: [{
+    path: "gmd",
+    name: "gmdgroup",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _GrowthMaturityDeclineCard2.default
+    }
+  }, {
+    path: "diversityinclusion",
+    name: "diversityinclusiongroup",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _DiversityInclusionCard2.default
+    }
+  }, {
+    path: "risk",
+    name: "riskgroup",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _RiskCard2.default
+    }
+  }, {
+    path: "value",
+    name: "valuegroup",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _ValueCard2.default
+    }
+  }, {
+    path: "activity",
+    name: "activitygroup",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _BaseRepoActivityCard2.default
+    }
+  }, {
+    path: "experimental",
+    name: "experimentalgroup",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _ExperimentalCard2.default
+    }
+  }, {
+    path: "git",
+    name: "gitgroup",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _GitCard2.default
+    }
+  }, {
+    path: "overview",
+    name: "overviewgroup",
+    components: {
+      header: _AugurHeader2.default,
+      tabs: _Tabs2.default,
+      controls: _MainControls2.default,
+      content: _OverviewCard2.default
+    }
+  }]
+}];
+var downloadedRepos = [],
+    repos = [],
+    projects = [];
+window.AugurAPI.getDownloadedGitRepos().then(function (data) {
+
+  repos = window._.groupBy(data, 'project_name');
+  projects = Object.keys(repos);
+});
+// const routes = routerOptions.map(route => {
+//   // let route1 = Object.assign({}, route);
+//   return {
+//     route,
+//     component: () => require(`@/components/${route.component}.vue`)
+//   }
+// })
+
+
+exports.default = new _vueRouter2.default({
+  // routes,
+  routes: routes,
+  mode: 'history',
+  hashbang: false
+});
+});
+
+;require.alias("buffer/index.js", "buffer");
 require.alias("process/browser.js", "process");
 require.alias("vue/dist/vue.common.js", "vue");process = require('process');require.register("___globals___", function(exports, require, module) {
   

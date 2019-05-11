@@ -151,13 +151,15 @@
 import BubbleChart from './charts/BubbleChart'
 import StackedBarChart from './charts/StackedBarChart'
 import DynamicLineChart from './charts/DynamicLineChart'
+import SkeletonChart from './charts/SkeletonChart'
 import FacadeTest from './FacadeTest'
 module.exports = {
   components: {
     BubbleChart,
     StackedBarChart,
     DynamicLineChart,
-    FacadeTest
+    FacadeTest,
+    SkeletonChart
   },
   data() {
     return {
