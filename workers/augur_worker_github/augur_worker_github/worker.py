@@ -167,16 +167,16 @@ class GitHubWorker:
                 raise ValueError(f'{message.type} is not a recognized task type')
 
             if message.type == 'TASK':
-                self.query(message.entry_info)
+                self.query_contributors(message.entry_info)
 
-    def query(self, entry_info):
+    def query_contributors(self, entry_info):
         """ Data collection function
-        Query the github api for contributors and issues (not yet implemented)
+        Query the GitHub API for contributors
         """
 
         tool_source = 'AUGWOP GitHub Woker'
         tool_version = '0.1.0' # See __init__.py
-        data_source = 'GitHup API'
+        data_source = 'GitHub API'
 
         url = entry_info['repo_git']
 
@@ -185,8 +185,6 @@ class GitHubWorker:
 
         owner = split[1]
         name = split[2]
-
-        ### CONTRIBUTORS ###
 
         url = ("https://api.github.com/repos/" + owner + "/" + name + "/contributors")
 
@@ -197,19 +195,19 @@ class GitHubWorker:
             data[item]['repo_id'] = entry_info['repo_id']
             
             modified_data = {
-                # "cntrb_login": 'test',
-                # "cntrb_email": 'test',
-                # "cntrb_company": 'test',
-                # "cntrb_type": 'test',
-                # "cntrb_fake": 1,
-                # "cntrb_deleted": 1,
-                # "cntrb_long": 1,
-                # "cntrb_lat": 1,
-                # "cntrb_country_code": 1,
-                # "cntrb_state": 'test',
-                # "cntrb_city": 'test',
-                # "cntrb_location": 'test',
-                # "cntrb_canonical": 'test',
+                # "cntrb_login": ,
+                # "cntrb_email": ,
+                # "cntrb_company": ,
+                # "cntrb_type": ,
+                # "cntrb_fake": ,
+                # "cntrb_deleted": ,
+                # "cntrb_long": ,
+                # "cntrb_lat": ,
+                # "cntrb_country_code": ,
+                # "cntrb_state": ,
+                # "cntrb_city": ,
+                # "cntrb_location": ,
+                # "cntrb_canonical": ,
                 "gh_user_id": data[i]['id'],
                 "gh_login": data[i]['login'],
                 "gh_url": data[i]['url'],
@@ -233,10 +231,24 @@ class GitHubWorker:
                 "data_source": data_source
             }
 
-            # self.db.execute(self.table.insert().values(modified_data))
+            self.db.execute(self.table.insert().values(modified_data))
 
+    def query_issues(self, entry_info):
+        """ Data collection function
+        Query the GitHub API for issues
+        """
 
-        ### ISSUES ###
+        tool_source = 'AUGWOP GitHub Woker'
+        tool_version = '0.1.0' # See __init__.py
+        data_source = 'GitHub API'
+
+        url = entry_info['repo_git']
+
+        path = urlparse(url)
+        split = path[2].split('/')
+
+        owner = split[1]
+        name = split[2]
 
         url = ("https://api.github.com/repos/" + owner + "/" + name + "/issues")
 
@@ -247,14 +259,14 @@ class GitHubWorker:
             data[i]['repo_id'] = entry_info['repo_id']
 
             modified_data = {
-                "issue_id": data[i]['number'], # primary key
+                "issue_id": data[i]['number'],
                 "repo_id": data[i]['repo_id'],
-            #     "reporter_id": 1,
+            #     "reporter_id": ,
                 "pull_request": data[i]['number'],
                 "pull_request_id": data[i]['number'],
                 "issue_title": data[i]['title'],
                 "issue_body": data[i]['body'],
-            #     "cntrb_id": 1,
+            #     "cntrb_id": ,
                 "comment_count": data[i]['comments'],
                 "updated_at": data[i]['updated_at'],
                 "closed_at": data[i]['closed_at'],
@@ -265,7 +277,7 @@ class GitHubWorker:
                 "events_url": data[i]['events_url'],
                 "html_url": data[i]['html_url'],
                 "issue_state": data[i]['state'],
-            #    "issue_node_id": 1, #data[i]['node_id'], change to int ?
+            #    "issue_node_id": ,
                 "gh_issue_id": data[i]['id'],
                 "gh_user_id": data[i]['user']['id']
                 "tool_source": tool_source,
@@ -273,9 +285,9 @@ class GitHubWorker:
                 "data_source": data_source
             }
 
-            # self.db.execute(self.table.insert().values(modified_data))
+            self.db.execute(self.table.insert().values(modified_data))
         
-        ### ISSUE COMMENTS ####
+        ### SPECIFIC ISSUE ####
 
         issue_number = '245'
 
@@ -286,14 +298,14 @@ class GitHubWorker:
         data_issues['repo_id'] = entry_info['repo_id']
 
         modified_data_issues = {
-            "issue_id": data_issues['number'], # primary key
+            "issue_id": data_issues['number'],
             "repo_id": data_issues['repo_id'],
-        #     "reporter_id": 1,
+        #     "reporter_id": ,
             "pull_request": data_issues['number'],
             "pull_request_id": data_issues['number'],
             "issue_title": data_issues['title'],
             "issue_body": data_issues['body'],
-        #     "cntrb_id": 1,
+        #     "cntrb_id": ,
             "comment_count": data_issues['comments'],
             "updated_at": data_issues['updated_at'],
             "closed_at": data_issues['closed_at'],
@@ -304,7 +316,7 @@ class GitHubWorker:
             "events_url": data_issues['events_url'],
             "html_url": data_issues['html_url'],
             "issue_state": data_issues['state'],
-        #    "issue_node_id": 1, #data[i]['node_id'], change to int ?
+        #    "issue_node_id": ,
             "gh_issue_id": data_issues['id'],
             "gh_user_id": data_issues['user']['id']
             "tool_source": tool_source,
@@ -312,7 +324,7 @@ class GitHubWorker:
             "data_source": data_source
         }
 
-        # self.db.execute(self.table1.insert().values(modified_data_issues))
+        self.db.execute(self.table1.insert().values(modified_data_issues))
 
         url = (url + "/comments")
         r = requests.get(url=url)
@@ -325,7 +337,7 @@ class GitHubWorker:
                 "msg_timestamp": data_message[i]['created_at']
             }
 
-            # self.db.execute(self.table2.insert().values(modified_data_message))
+            self.db.execute(self.table2.insert().values(modified_data_message))
 
         ### ISSUE MESSAGE REF TABLE ###
 
@@ -333,6 +345,6 @@ class GitHubWorker:
             "issue_id": modified_data_issues['issue_id'],
         }
 
-        # self.db.execute(self.table3.insert().values(modified_data_issue_message))
+        self.db.execute(self.table3.insert().values(modified_data_issue_message))
 
         requests.post('http://localhost:5000/api/completed_task', json=entry_info['repo_git'])
