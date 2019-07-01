@@ -77,7 +77,7 @@ def main(augur_url, host, port):
     if app.gh_worker._child is not None:
         app.gh_worker._child.terminate()
     try:
-        requests.post('http://localhost:5000/api/unstable/workers/remove', json={"id": config['id']})
+        requests.post('http://newtwitter.augurlabs.io/api/unstable/workers/remove', json={"id": config['id']})
     except:
         pass
     

@@ -183,7 +183,7 @@ class GitHubWorker:
 
         # self.run()
 
-        requests.post('http://localhost:5000/api/unstable/workers', json=specs) #hello message
+        requests.post('http://newtwitter.augurlabs.io/api/unstable/workers', json=specs) #hello message
 
     def update_config(self, config):
         """ Method to update config and set a default
@@ -961,7 +961,7 @@ class GitHubWorker:
         logging.info("Telling broker we completed task: " + str(task_completed) + "\n" + 
             "This task inserted: " + str(self.results_counter) + " tuples.\n\n")
 
-        requests.post('http://localhost:5000/api/unstable/completed_task', json=task_completed)
+        requests.post('http://newtwitter.augurlabs.io/api/unstable/completed_task', json=task_completed)
 
         # Reset results counter for next task
         self.results_counter = 0

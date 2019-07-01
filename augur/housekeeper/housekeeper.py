@@ -103,7 +103,7 @@ class Housekeeper:
                     if "focused_task" in repo:
                         task["focused_task"] = repo['focused_task']
                     try:
-                        requests.post('http://localhost:5000/api/unstable/task', json=task, timeout=10)
+                        requests.post('http://newtwitter.augurlabs.io/api/unstable/task', json=task, timeout=10)
                     except:# Exception as e:
                         logging.info("no worker found")
 

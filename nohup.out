@@ -1,0 +1,20 @@
+Makefile:171: warning: overriding recipe for target 'vagrant'
+Makefile:158: warning: ignoring old recipe for target 'vagrant'
+sending SIGTERM to node (Brunch) at PID 82209; bash: line 0: kill: (82209) - No such process
+sending SIGTERM to python (Gunicorn) at PID 82160; bash: line 0: kill: (82160) - No such process
+
+make: conda: Command not found
+make: conda: Command not found
+bash: /etc/profile.d/conda.sh: No such file or directory
+bash: conda: command not found
+bash: /etc/profile.d/conda.sh: No such file or directory
+bash: conda: command not found
+Server     Description       Log                   Monitoring                   PID                        
+------------------------------------------------------------------------------------------                 
+Frontend   Brunch            logs/frontend.log     make monitor-backend         82595 
+Backend    Augur/Gunicorn    logs/backend.log      make monitor-frontend        82546 
+
+Monitor both:  make monitor  
+Restart and monitor: make dev
+Restart servers:  make dev-start 
+Stop servers:  make dev-stop 

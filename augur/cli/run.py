@@ -58,8 +58,8 @@ def cli(app):
     app.schedule_updates()
     master = None
     controller = {
-        'broker': 0,#app.read_config('Server', 'broker', None, '0'),
-        'housekeeper': 0,#app.read_config('Server', 'housekeeper', None, '0'),
+        'broker': 0,#app.read_config('Server', 'broker', None, '1'),
+        'housekeeper': 0,#app.read_config('Server', 'housekeeper', None, '1'),
         'github_worker': 0#app.read_config('Server', 'github_worker', None, '0'),
     }
 
@@ -124,7 +124,7 @@ def cli(app):
 
 
     host = app.read_config('Server', 'host', 'AUGUR_HOST', '0.0.0.0')
-    port = app.read_config('Server', 'port', 'AUGUR_PORT', '5000')
+    port = app.read_config('Server', 'port', 'AUGUR_PORT', '5001')
     workers = int(app.read_config('Server', 'workers', 'AUGUR_WORKERS', mp.cpu_count()))
     options = {
         'bind': '%s:%s' % (host, port),
